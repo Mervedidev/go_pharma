@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Go Pharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 5%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a,
+      .btn-whatsapp {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="Logo_Go_Pharma-removebg-preview (1).png" alt="Go Pharma logo">
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#accueil">Accueil</a>
+      <a href="https://tally.so/r/nWk4GJ">Commander</a>
+      <a href="#services">Services</a>
+      <a href="apropos.html">À propos</a>
+      <a href="commentca.html">Comment ça marche</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn-whatsapp"
+        onclick="window.open('https://wa.me/22962620804?text=Bonjour%20Go%20Pharma,%20je%20souhaite%20une%20consultation%20gratuite.', '_blank')">
+        Consultation gratuite
+      </button>
+    </nav>
+  </header>
+
+
+
+
+  <section id="accueil" class="hero">
+    <style>
+      #accueil.hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('MEME.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+
+      #accueil.hero .hero-text {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        animation: fadeInUp 1s ease;
+      }
+
+      #accueil.hero .hero-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      #accueil.hero .hero-text span {
+        color: #25D366;
+        font-weight: 800;
+      }
+
+      #accueil.hero .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .btn-hero {
+        background: linear-gradient(135deg, #007f3f, #25D366);
+        color: white;
+        padding: 15px 35px;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-hero:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #25D366, #007f3f);
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #accueil.hero {
+          padding: 10px;
+          height: auto;
+        }
+
+        #accueil.hero .hero-text h1 {
+          font-size: 1.8rem;
+        }
+
+        #accueil.hero .hero-text p {
+          font-size: 1rem;
+        }
+
+        .btn-hero {
+          width: 100%;
+        }
+      }
+    </style>
+    <div class="hero-text">
+      <h1>Livraison express de médicaments dès <span>500 FCFA</span></h1>
+      <p>Besoin d’un traitement ? Cliquez, commandez, soyez livré. C’est tout.</p>
+      <a href="https://tally.so/r/nWk4GJ" target="_blank" class="btn-hero">🚀 Commander </a>
+    </div>
+  </section>
+
+  <!-- STYLE GLOBALS MODERNES (conservés) -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn-order {
+      display: inline-block;
+      background: linear-gradient(135deg, #007f3f, #25D366);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .btn-order:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #25D366, #007f3f);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #007f3f;
+      font-weight: 700;
+    }
+
+    .contact-info {
+      background: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin: 40px auto;
+      max-width: 800px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .contact-info a {
+      color: #007f3f;
+      font-weight: 500;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 28px;
+      }
+
+      .contact-info {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+
+  <!-- CONTACT -->
+  <div class="contact-info">
+    <p><strong>📍 Cotonou – Calavi</strong></p>
+    <p>📞 +229 01 67 71 63 96</p>
+
+    <p>📞 +229 01 62 62 08 04</p>
+
+    <p>📞 +229 01 54 97 44 04 </p>
+    
+    <p>🌐 <a href="#">gopharma.com</a></p>
+    <p>
+      🔗<a
+        href="https://wa.me/22962620804?text=Bonjour%20Go%20Pharma,%20je%20souhaite%20acheter%20un%20m%C3%A9dicament%20chez%20vous.">WhatsApp</a>
+      |
+      <a href="https://www.facebook.com/gopharma">Facebook</a>
+    </p>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding: 60px 20px; background-color: #eafaf1;">
+    <h2 class="section-title">✨ Nos Services</h2>
+    <div class="services" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <div class="service-item"
+        style="background: white; border-radius: 16px; padding: 30px 25px; width: 280px; text-align: center; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);">
+        <img src="https://img.icons8.com/fluency-systems-filled/48/28a745/add-shopping-cart.png" alt="Commande"
+          style="width: 60px; margin-bottom: 15px;">
+        <h3 style="font-size: 20px; color: #007f3f; margin-bottom: 10px;">Commande en ligne</h3>
+        <p style="color: #444; font-size: 15px; line-height: 1.6;">Choisissez vos médicaments et passez la commande sans
+          quitter votre maison.</p>
+      </div>
+      <div id="service-livraison"
+        style="text-align:center; padding:40px 20px; background:#f9f9f9; font-family: Arial, sans-serif; max-width: 320px; margin: auto;">
+        <img src="icon-livraison.png" alt="Icône livraison" style="width:48px; height:48px; margin-bottom:15px;" />
+        <h3 style="color:#28a745; margin-bottom:10px; font-size:1.5rem;">Livraison express</h3>
+        <p style="color:#555; font-size:1rem; line-height:1.4;">Un livreur arrive rapidement chez vous, en toute
+          sécurité et confidentialité.</p>
+      </div>
+      <div class="service-item"
+        style="background: white; border-radius: 16px; padding: 30px 25px; width: 280px; text-align: center; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);">
+        <img src="https://img.icons8.com/ios-filled/50/28a745/help.png" alt="Support"
+          style="width: 60px; margin-bottom: 15px;">
+        <h3 style="font-size: 20px; color: #007f3f; margin-bottom: 10px;">Assistance client</h3>
+        <p style="color: #444; font-size: 15px; line-height: 1.6;">Notre équipe vous accompagne et vous conseille 7j/7
+          sur WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe" style="padding: 40px 20px; text-align: center; background-color: #f5f5f5;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Notre Équipe</h2>
+    <img src="equipe.png" alt="Photo de l'équipe"
+      style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <p style="margin-top: 15px; font-size: 1rem; color: #555;">Une équipe passionnée et dédiée à votre service.</p>
+  </section>
+  </section>
+  <style>
+    #services {
+      padding: 60px 5%;
+      background-color: #f9f9f9;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #28a745;
+      font-weight: 700;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .service-item {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      width: 280px;
+      box-shadow: 0 6px 15px rgb(40 167 69 / 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .service-item:focus,
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgb(40 167 69 / 0.4);
+      outline: none;
+    }
+
+    .service-item svg {
+      margin-bottom: 20px;
+    }
+
+    .service-item h3 {
+      color: #28a745;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-item {
+        width: 90%;
+        max-width: 350px;
+      }
+    }
+  </style>
+
+  <!-- SECTION LOCALISATION DES PHARMACIES -->
+  <section id="localisation" style="padding: 60px 5%; background: #f9f9f9;">
+    <h2 style="text-align: center; color: #28a745; font-size: 2.2rem; margin-bottom: 10px;">📍 Trouver une pharmacie
+      près de vous</h2>
+    <p style="text-align: center; font-size: 1.1rem; color: #555;">Votre position est utilisée pour localiser les
+      pharmacies dans un rayon de 1,5 km.</p>
+
+    <div id="map"
+      style="height: 450px; width: 100%; margin-top: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+    </div>
+
+    <div id="loading" style="text-align: center; margin-top: 20px; color: #888; font-style: italic;">⏳ Chargement en
+      cours...</div>
+  </section>
+
+  <!-- Leaflet (Carte OpenStreetMap gratuite) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map('map').setView([6.4976, 2.6036], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+    }).addTo(map);
+
+    const loadingMessage = document.getElementById("loading");
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+
+        // Marqueur de l'utilisateur
+        const userIcon = L.icon({
+          iconUrl: 'https://img.icons8.com/color/48/user-location.png',
+          iconSize: [38, 38],
+        });
+
+        L.marker([userLat, userLng], { icon: userIcon })
+          .addTo(map)
+          .bindPopup("📍 Vous êtes ici")
+          .openPopup();
+
+        map.setView([userLat, userLng], 15);
+
+        // Appel Overpass API pour récupérer les pharmacies proches
+        const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=pharmacy](around:1500,${userLat},${userLng});out;`;
+
+        fetch(overpassUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (data.elements.length === 0) {
+              loadingMessage.innerText = "😕 Aucune pharmacie trouvée dans un rayon de 1,5 km.";
+              return;
+            }
+
+            loadingMessage.style.display = "none";
+
+            data.elements.forEach(pharmacy => {
+              const lat = pharmacy.lat;
+              const lon = pharmacy.lon;
+              const name = pharmacy.tags.name || "Pharmacie";
+
+              const icon = L.icon({
+                iconUrl: 'https://img.icons8.com/fluency/48/pill.png',
+                iconSize: [32, 32],
+              });
+
+              L.marker([lat, lon], { icon: icon })
+                .addTo(map)
+                .bindPopup(`💊 ${name}`);
+            });
+          })
+          .catch(error => {
+            console.error("Erreur API :", error);
+            loadingMessage.innerText = "❌ Une erreur est survenue lors du chargement des pharmacies.";
+          });
+
+      }, function () {
+        loadingMessage.innerText = "❗ Autorisation de position refusée. Impossible d'afficher les pharmacies proches.";
+      });
+    } else {
+      loadingMessage.innerText = "⚠️ Géolocalisation non prise en charge par votre navigateur.";
+    }
+  </script>
+
+
+
+
+  <!-- IMAGE SECTION 1 -->
+  <section class="image-section" style="text-align: center; padding: 50px 5%;">
+    <img src="pg.png" alt="Image illustrative 1" style="max-width: 100%; height: auto; border-radius: 10px;" />
+  </section>
+
+
+
+  <!-- BOUTON COMMANDER AU CENTRE -->
+  <section style="text-align: center; padding: 60px 5%;">
+    <a href="https://tally.so/r/nWk4GJ" class="btn-shake">COMMANDER MAINTENANT</a>
+  </section>
+
+  <style>
+    .btn-shake {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      animation: shake 0.5s infinite;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .btn-shake:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+
+      10% {
+        transform: translate(-5px, -2px) rotate(-2deg);
+      }
+
+      20% {
+        transform: translate(5px, 2px) rotate(2deg);
+      }
+
+      30% {
+        transform: translate(-4px, -1px) rotate(-1deg);
+      }
+
+      40% {
+        transform: translate(4px, 1px) rotate(1deg);
+      }
+
+      50% {
+        transform: translate(-3px, 0px) rotate(-1deg);
+      }
+
+      60% {
+        transform: translate(3px, 0px) rotate(1deg);
+      }
+
+      70% {
+        transform: translate(-2px, 1px) rotate(0deg);
+      }
+
+      80% {
+        transform: translate(2px, -1px) rotate(0deg);
+      }
+
+      90% {
+        transform: translate(-1px, 0px) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+  </style>
+  <section
+    style="display: flex; justify-content: space-around; align-items: flex-start; padding: 40px; background-color: #f9f9f9; flex-wrap: wrap; text-align: center;">
+    <div style="max-width: 300px; margin: 20px;">
+      <img src="monsieur.png" alt="Sécurité" style="width: 100%; border-radius: 10px;">
+      <h3 style="color: #007f3f; margin-top: 15px;">Sécurité</h3>
+      <p>Vos médicaments livrés en toute sécurité.</p>
+    </div>
+
+    <div style="max-width: 300px; margin: 20px;">
+      <img src="madame.png" alt="Confidentialité" style="width: 100%; border-radius: 10px;">
+      <h3 style="color: #007f3f; margin-top: 15px;">Confidentialité</h3>
+      <p>Vos informations personnelles restent privées.</p>
+    </div>
+
+    <div style="max-width: 300px; margin: 20px;">
+      <img src="phamee.png" alt="Qualité" style="width: 100%; border-radius: 10px;">
+      <h3 style="color: #007f3f; margin-top: 15px;">Qualité</h3>
+      <p>Produits certifiés provenant de pharmacies agréées.</p>
+    </div>
+  </section>
+
+
+  <!-- SECTION HISTOIRE AU MILIEU DE L'ACCUEIL -->
+  <section style="padding: 60px 5%; background-color: #f7f7f7;">
+    <!-- Bloc 1 : Texte gauche / Image droite -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 60px;">
+      <div style="flex: 1; min-width: 280px; padding: 20px;">
+        <h2 style="font-size: 2rem; margin-bottom: 15px;">Comment tout a commencé</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+          Tout a commencé un jour bien banal. Il faisait chaud, j’étais fatigué, et j’avais attrapé une vilaine grippe.
+          Pas de force pour me lever. Je me dis : “Bon, je vais appeler quelqu’un pour m’acheter mes médicaments.”
+          Sauf que... tout le monde était occupé. Famille, amis, même mon voisin m’a dit : “Frère, j’suis au marché !”
+          <br><br>
+          Là, je suis resté allongé, le nez bouché, la voix cassée, à me dire :
+          “Et si quelqu’un pouvait m’amener mes médicaments comme on commande un burger ?”
+          Et <strong>boum !</strong> L’idée a frappé comme un doliprane de 1000 mg : <strong>Go Pharma !</strong>
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 280px; text-align: center;">
+        <img src="malade.png" alt="Malade au lit" style="max-width: 100%; border-radius: 10px;" />
+      </div>
+    </div>
+
+    <!-- Bloc 2 : Image gauche / Texte droite -->
+    <div style="display: flex; flex-wrap: wrap-reverse; align-items: center; justify-content: center;">
+      <div style="flex: 1; min-width: 280px; text-align: center;">
+        <img src="LIVRAISON SUNDAY.png" alt="Livraison de médicaments" style="max-width: 100%; border-radius: 10px;" />
+      </div>
+      <div style="flex: 1; min-width: 280px; padding: 20px;">
+        <h2 style="font-size: 2rem; margin-bottom: 15px;">Go Pharma, une idée née entre deux mouchoirs</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+          J’ai pris un cahier, gribouillé le nom, le logo, les couleurs… (à ce moment-là j’éternuais toutes les 3
+          secondes, c’était sport).
+          Mais ce jour-là, entre deux mouchoirs, <strong>Go Pharma est né</strong>.
+          <br><br>
+          Depuis, on a livré des centaines de clients, sauvé des journées, évité des files d’attente,
+          et surtout, on a prouvé qu’on peut prendre soin des gens avec un peu d’humour, de technologie, et beaucoup de
+          cœur ❤️
+          <br><br>
+          Alors si t’es malade, fainéant, pressé, ou tout simplement malin… <strong>Go Pharma est là pour toi !</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="engagement-sante"
+    style="background: #25D366; color: white; padding: 60px 20px; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">Notre engagement santé</h2>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 1.25rem; line-height: 1.6;">
+      Chez <strong>Go Pharma</strong>, notre mission est simple :
+      <em>offrir à chaque Béninois un accès rapide et sûr aux soins,
+        peu importe l’heure ou l’endroit.</em>
+      Nous nous engageons à garantir la qualité, la sécurité et la confidentialité de vos commandes,
+      tout en vous accompagnant avec professionnalisme et bienveillance.
+    </p>
+    <div style="margin-top: 30px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2913/2913461.png" alt="Engagement Santé"
+        style="width: 80px; opacity: 0.85;" />
+    </div>
+  </section>
+  <section id="equipe" style="padding: 40px 20px; text-align: center; background-color: #f5f5f5;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;"> </h2>
+    <img src="ChatGPT Image 8 juin 2025, 23_52_24.png" alt="Photo de l'équipe"
+      style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <p style="margin-top: 15px; font-size: 1rem; color: #555;"></p>
+  </section>
+
+
+
+
+  <section id="whatsapp-qr" style="padding: 50px 20px; text-align: center; background-color: #e6f7e6;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #25D366;">Votre sourire notre prioriter</h2>
+    <img src="RADI.png" alt="QR Code WhatsApp"
+      style="width: 200px; height: 200px; border: 3px solid #25D366; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,128,0,0.2);">
+    <p style="margin-top: 15px; font-size: 1rem; color: #333;"></p>
+  </section>
+  <section
+    style="display: flex; justify-content: center; align-items: center; padding: 40px 0; background-color: #f9f9f9;">
+    <a href="https://wa.me/22962620804?text=Bonjour%20Go%20Pharma,%20je%20souhaite%20une%20consultation%20gratuite."
+      target="_blank" style="background-color: #25D366; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 18px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;">
+      Consultation gratuite via WhatsApp
+    </a>
+  </section>
+
+  <section id="whatsapp-qr" style="padding: 50px 20px; text-align: center; background-color: #e6f7e6;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #25D366;">Contactez-nous sur WhatsApp</h2>
+    <img src="frame.png" alt="QR Code WhatsApp"
+      style="width: 200px; height: 200px; border: 3px solid #25D366; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,128,0,0.2);">
+    <p style="margin-top: 15px; font-size: 1rem; color: #333;">Scannez ce QR code pour discuter avec nous directement
+      sur WhatsApp.</p>
+  </section>
+
+  <style>
+    .testimonial-section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .testimonial-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #0a558c;
+    }
+
+    .carousel {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .testimonial {
+      min-width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .testimonial p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      color: #0a558c;
+    }
+
+    .carousel-nav {
+      margin-top: 20px;
+    }
+
+    .carousel-button {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .carousel-button.active {
+      background-color: #0a558c;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #slide1:checked~.carousel-track {
+      transform: translateX(0%);
+    }
+
+    #slide2:checked~.carousel-track {
+      transform: translateX(-100%);
+    }
+
+    #slide3:checked~.carousel-track {
+      transform: translateX(-200%);
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <section id="avis-clients" style="max-width: 700px; margin: 50px auto; font-family: Arial, sans-serif;">
+      <h2 style="text-align:center; color:#28a745; margin-bottom: 30px;">🗣️ Avis Clients</h2>
+
+      <div class="carousel">
+        <button class="prev" aria-label="Avis précédent"
+          style="cursor:pointer; background:#28a745; color:#fff; border:none; padding:10px 15px; border-radius:5px;">‹</button>
+
+        <div class="carousel-track-container"
+          style="overflow:hidden; width: 100%; display: inline-block; vertical-align: middle;">
+          <ul class="carousel-track"
+            style="display: flex; padding: 0; margin: 0; list-style: none; transition: transform 0.4s ease;">
+            <li class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 20px;">
+              <blockquote style="font-style: italic; color: #555;">
+                "Service rapide et efficace, livraison au top ! Je recommande vivement."
+              </blockquote>
+              <p style="text-align: right; font-weight: bold; color:#28a745; margin-top: 10px;">- Alice D.</p>
+            </li>
+
+            <li class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 20px;">
+              <blockquote style="font-style: italic; color: #555;">
+                "Très bon suivi client, toujours à l’écoute et disponible."
+              </blockquote>
+              <p style="text-align: right; font-weight: bold; color:#28a745; margin-top: 10px;">- Bertrand K.</p>
+            </li>
+
+            <li class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 20px;">
+              <blockquote style="font-style: italic; color: #555;">
+                "Produits de qualité et livraison rapide, parfait pour mes besoins."
+              </blockquote>
+              <p style="text-align: right; font-weight: bold; color:#28a745; margin-top: 10px;">- Clara M.</p>
+            </li>
+          </ul>
+        </div>
+
+        <button class="next" aria-label="Avis suivant"
+          style="cursor:pointer; background:#28a745; color:#fff; border:none; padding:10px 15px; border-radius:5px;">›</button>
+      </div>
+    </section>
+
+    <script>
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector('.next');
+      const prevButton = document.querySelector('.prev');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+
+      let currentIndex = 0;
+
+      function moveToSlide(track, currentSlide, targetSlide) {
+        track.style.transform = 'translateX(-' + slideWidth * targetSlide + 'px)';
+      }
+
+      nextButton.addEventListener('click', () => {
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+          currentIndex = 0;
+        }
+        moveToSlide(track, currentIndex - 1, currentIndex);
+      });
+
+      prevButton.addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = slides.length - 1;
+        }
+        moveToSlide(track, currentIndex + 1, currentIndex);
+      });
+    </script>
+
+ <section id="equipe" style="padding: 40px 20px; text-align: center; background-color: #f5f5f5;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">VOTRE SATISFACTION NOTRE PRIORITER </h2>
+      <img src="pipe.png" alt="Photo de l'équipe"
+        style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+      <p style="margin-top: 15px; font-size: 1rem; color: #555;"></p>
+    </section>
+
+    <section
+      style="padding: 60px 20px; background-color: #f9fefb; font-family: Arial, sans-serif; max-width: 1000px; margin: 60px auto; text-align: center; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
+      <h2 style="font-size: 32px; color: #1c8d50; margin-bottom: 40px;">Notre Équipe d'Experts</h2>
+
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+
+        <!-- Toi, poste à définir -->
+        <div
+          style="background: white; border-radius: 12px; padding: 20px; max-width: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <img src="Père-Romuald.jpg" alt="Ton Portrait"
+            style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+          <h3 style="color: #25D366; margin-bottom: 5px;"> Hounsa Romuald</h3>
+          <p style="font-weight: bold; color: #444; margin-bottom: 5px;">Développeur Mobile</p>
+          <p style="color: #444; font-size: 14px; line-height: 1.4;">
+            Passionné par l'innovation digitale et l'optimisation des services clients.
+          </p>
+        </div>
+
+        <!-- Programmeur-->
+        <div
+          style="background: white; border-radius: 12px; padding: 20px; max-width: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <img src="MERVEDI PHOTO .JPG" alt="Pharmacienne Claire"
+            style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+          <h3 style="color: #25D366; margin-bottom: 5px;">Roneldo Hounsa</h3>
+          <p style="font-weight: bold; color: #444; margin-bottom: 5px;"> Programmeur Web et E-commercant </p>
+          <p style="color: #444; font-size: 14px; line-height: 1.4;">
+            Spécialiste en conseils personnalisés, Hounsa Mervedi Roneldo, passionné par le développement web et mobile. Curieux, rigoureux , je cree des solutions numériques efficaces et modernes.
+          </p>
+        </div>
+
+        <!-- Assistante pharmaceutique -->
+        <div
+          style="background: white; border-radius: 12px; padding: 20px; max-width: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Assistante Sandra"
+            style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+          <h3 style="color: #25D366; margin-bottom: 5px;">Cynthia L.</h3>
+          <p style="font-weight: bold; color: #444; margin-bottom: 5px;">Assistante pharmaceutique</p>
+          <p style="color: #444; font-size: 14px; line-height: 1.4;">
+            Toujours prête à vous aider avec le sourire.
+          </p>diplômée
+        </div>
+
+        <!-- Autres postes possibles -->
+        <div
+          style="background: #e9f7ef; border-radius: 12px; padding: 20px; max-width: 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); color: #1c8d50;">
+          <h3 style="margin-bottom: 15px;">Postes clés à venir</h3>
+          <ul style="list-style: none; padding: 0; font-size: 14px; text-align: left;">
+            <li>- Responsable Logistique</li>
+            <li>- Chargé(e) de relation client</li>
+            <li>- Responsable Qualité</li>
+            <li>- Community Manager</li>
+            <li>- Technicien support informatique</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="equipe" style="padding: 40px 20px; text-align: center; background-color: #f5f5f5;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;"></h2>
+      <img src="ChatGPT Image 19 juin 2025, 15_39_48.png" alt="Photo de l'équipe"
+        style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+      <p style="margin-top: 15px; font-size: 1rem; color: #555;"></p>
+    </section>
+
+    <section id="equipe" style="padding: 40px 20px; text-align: center; background-color: #f5f5f5;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">Commandez facilement </h2>
+      <img src="app go.png" alt="Photo de l'équipe"
+        style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+      <p style="margin-top: 15px; font-size: 1rem; color: #555;">Nous sommes a votre disposition</p>
+    </section>
+
+
+
+
+
+
+    <section
+      style="background-color: #1a1a1a; color: #ccc; padding: 60px 20px 40px; font-family: 'Poppins', sans-serif;">
+      <style>
+        .footer-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 40px;
+          max-width: 1200px;
+          margin: auto;
+        }
+
+        .footer h4 {
+          color: #fff;
+          margin-bottom: 15px;
+          font-size: 18px;
+        }
+
+        .footer a {
+          color: #ccc;
+          text-decoration: none;
+          transition: 0.3s;
+        }
+
+        .footer a:hover {
+          color: #25D366;
+        }
+
+        .footer-logo {
+          width: 120px;
+          margin-bottom: 10px;
+        }
+
+        .footer-links ul,
+        .footer-contact ul,
+        .footer-hours ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-links li,
+        .footer-contact li,
+        .footer-hours li {
+          margin-bottom: 10px;
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 15px;
+        }
+
+        .social-icons img {
+          width: 30px;
+          transition: 0.3s;
+        }
+
+        .social-icons img:hover {
+          transform: scale(1.2);
+        }
+
+        .footer-newsletter input {
+          padding: 10px;
+          width: 100%;
+          margin-bottom: 10px;
+          border: none;
+          border-radius: 6px;
+        }
+
+        .footer-newsletter button {
+          padding: 10px;
+          width: 100%;
+          background-color: #25D366;
+          border: none;
+          color: white;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .footer-newsletter button:hover {
+          background-color: #1DA851;
+        }
+
+        .footer-bottom {
+          text-align: center;
+          margin-top: 30px;
+          border-top: 1px solid #333;
+          padding-top: 20px;
+          font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+          .footer-container {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+      </style>
+
+      <div class="footer">
+        <div class="footer-container">
+
+          <div class="footer-brand">
+            <img src="lager.jpg" alt="Go Pharma" class="footer-logo">
+            <p>Go Pharma – Livraison rapide de médicaments partout au Bénin.</p>
+          </div>
+
+          <div class="footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-hours">
+            <h4>Horaires</h4>
+            <ul>
+              <li>Lun - Ven : 06h à 00h</li>
+              <li>Sam : 06h à 00h</li>
+              <li>Dim : 06h a 00h</li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <ul> 
+
+            <li><a href="tel:+22967716396">📞 +229 01 67 71 63 96</a></li>
+              <li><a href="tel:+22962620804">📞 +229 01 62 62 08 04</a></li>
+               <li><a href="tel:+2290154974404">📞 +229 01 54 97 44 04</a></li>
+              <li><a href="mailto:info@gopharma.bj">✉️ info@gopharma.bj</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4>Suivez-nous</h4>
+            <div class="social-icons">
+              <a href="+22962620804"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  alt="WhatsApp"></a>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Recevez nos actus</h4>
+            <form>
+              <input type="email" placeholder="Votre adresse email" required>
+              <button type="submit">S'inscrire</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Go Pharma – Tous droits réservés</p>
+        </div>
+      </div>
+    </section>
+    <!-- MENU BURGER SCRIPT -->
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('open');
+      }
+    </script>
+  </body>
+
+</html>

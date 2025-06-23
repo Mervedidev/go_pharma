@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos de nous | Go Pharma</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #2ea44f;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #2ea44f;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+      align-items: center;
+    }
+
+    .about-section img {
+      flex: 1;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .about-section .text {
+      flex: 2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e1e1e1;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-section img {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>À propos de Go Pharma</h1>
+  </header>
+
+  <div class="container">
+    <div class="about-section">
+      <div class="text">
+        <h2>Notre mission</h2>
+        <p>
+          Chez Go Pharma, nous facilitons l'accès aux médicaments en vous permettant de commander en ligne et de vous faire livrer rapidement à domicile.
+        </p>
+      </div>
+      <img src="pite.png" alt="Livreur Go Pharma">
+    </div>
+
+    <div class="about-section">
+      <img src="direct.png" alt="Prise en charge santé">
+      <div class="text">
+        <h2>Une vision humaine de la santé</h2>
+        <p>
+          Nous croyons que la santé doit être accessible à tous, sans tracas. C’est pourquoi nous connectons les patients aux pharmacies agréées avec un service rapide, fiable et sécurisé.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="text">
+        <h2>Nos engagements</h2>
+        <ul>
+          <li>Livraison express dans tout Cotonou – Calavi</li>
+          <li>Confidentialité et sécurité des données</li>
+          <li>Support client WhatsApp réactif</li>
+          <li>Partenaires pharmaceutiques certifiés</li>
+        </ul>
+      </div>
+      <img src="Pharmacien et cliente dans une pharmacie.png" alt="Service client WhatsApp">
+    </div>
+  </div>
+
+  <section style="background-color: #1a1a1a; color: #ccc; padding: 60px 20px 40px; font-family: 'Poppins', sans-serif;">
+  <style>
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .footer h4 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .footer a:hover {
+      color: #25D366;
+    }
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    .footer-links ul,
+    .footer-contact ul,
+    .footer-hours ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links li,
+    .footer-contact li,
+    .footer-hours li {
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .social-icons img {
+      width: 30px;
+      transition: 0.3s;
+    }
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+    .footer-newsletter input {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+    .footer-newsletter button {
+      padding: 10px;
+      width: 100%;
+      background-color: #25D366;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .footer-newsletter button:hover {
+      background-color: #1DA851;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <img src="lager.jpg" alt="Go Pharma" class="footer-logo">
+        <p>Go Pharma – Livraison rapide de médicaments partout au Bénin.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h4>Horaires</h4>
+        <ul>
+          <li>Lun - Ven : 8h à 21h</li>
+          <li>Sam : 9h à 20h</li>
+          <li>Dim : Fermé</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+2290154974404">📞 +229 01 54 97 44 04</a></li>
+          <li><a href="tel:+22998765432">📞 +229 98 76 54 32</a></li>
+          <li><a href="mailto:info@gopharma.bj">✉️ info@gopharma.bj</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Suivez-nous</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Recevez nos actus</h4>
+        <form>
+          <input type="email" placeholder="Votre adresse email" required>
+          <button type="submit">S'inscrire</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Go Pharma – Tous droits réservés</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
