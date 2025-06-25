@@ -1,84 +1,371 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Politique de confidentialité – Go Pharma</title>
+  <title>Go Pharma</title>
+  <link rel="icon" type="image/png" href="lager-removebg-preview.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
       color: #1a1a1a;
-      background-color: #fff;
-      max-width: 800px;
-      margin: auto;
+      background: #fff;
     }
-    h1 {
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 5%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a,
+      .btn-whatsapp {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Politique de Confidentialité styles */
+    main.privacy-policy {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+    }
+
+    main.privacy-policy h1 {
+      text-align: center;
       color: #28a745;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
     }
-    h2 {
-      margin-top: 40px;
+
+    main.privacy-policy h2 {
+      color: #28a745;
+      margin-top: 2em;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #28a745;
+      padding-bottom: 6px;
+    }
+
+    main.privacy-policy p,
+    main.privacy-policy ul {
+      margin-top: 0.5em;
+      line-height: 1.6;
+    }
+
+    main.privacy-policy ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 15px 0;
+      margin-top: 50px;
+      border-top: 1px solid #ddd;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Conservés styles globaux */
+    #accueil.hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('MEME.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    #accueil.hero .hero-text {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      animation: fadeInUp 1s ease;
+    }
+
+    #accueil.hero .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #accueil.hero .hero-text span {
+      color: #25D366;
+      font-weight: 800;
+    }
+
+    #accueil.hero .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-hero {
+      background: linear-gradient(135deg, #007f3f, #25D366);
+      color: white;
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-hero:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #25D366, #007f3f);
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #accueil.hero {
+        padding: 10px;
+        height: auto;
+      }
+
+      #accueil.hero .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      #accueil.hero .hero-text p {
+        font-size: 1rem;
+      }
+
+      .btn-hero {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <img src="lager-removebg-preview.png" alt="Go Pharma logo" />
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#accueil">Accueil</a>
+      <a href="https://tally.so/r/nWk4GJ">Commander</a>
+      <a href="#services">Services</a>
+      <a href="apropos.html">À propos</a>
+      <a href="commentca.html">Comment ça marche</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn-whatsapp"
+        onclick="window.open('https://wa.me/22962620804?text=Bonjour%20Go%20Pharma,%20je%20souhaite%20une%20consultation%20gratuite.', '_blank')">
+        Consultation gratuite
+      </button>
+    </nav>
+  </header>
 
-  <h1>Politique de confidentialité</h1>
-  <p>Chez <strong>Go Pharma</strong>, la protection de vos données personnelles est une priorité. Cette politique de confidentialité vous explique comment nous collectons, utilisons et protégeons vos informations.</p>
-
-  <h2>1. Données collectées</h2>
-  <p>Lorsque vous utilisez notre site ou passez une commande, nous collectons certaines informations personnelles, telles que :</p>
-  <ul>
-    <li>Votre nom</li>
-    <li>Votre numéro de téléphone</li>
-    <li>Votre adresse e-mail</li>
-    <li>Votre adresse de livraison</li>
-    <li>Le nom des médicaments commandés</li>
-  </ul>
-
-  <h2>2. Utilisation des données</h2>
-  <p>Nous utilisons vos données uniquement dans le but de :</p>
-  <ul>
-    <li>Traiter vos commandes</li>
-    <li>Vous contacter en cas de besoin</li>
-    <li>Améliorer nos services</li>
-  </ul>
-
-  <h2>3. Partage des données</h2>
-  <p>Vos données ne sont jamais revendues. Elles sont uniquement partagées avec :</p>
-  <ul>
-    <li>Nos livreurs (pour effectuer la livraison)</li>
-    <li>Nos partenaires techniques (hébergeurs, outils d’e-mailing, etc.)</li>
-  </ul>
-
-  <h2>4. Sécurité</h2>
-  <p>Nous mettons en œuvre toutes les mesures nécessaires pour garantir la sécurité de vos données (certificats SSL, accès restreints, etc.).</p>
-
-  <h2>5. Vos droits</h2>
-  <p>Vous avez le droit de :</p>
-  <ul>
-    <li>Demander une copie de vos données</li>
-    <li>Modifier ou corriger vos informations</li>
-    <li>Demander la suppression de vos données</li>
-  </ul>
-  <p>Pour toute demande, écrivez-nous à <strong>contact@gopharma.com</strong>.</p>
-
-  <h2>6. Cookies</h2>
-  <p>Notre site utilise des cookies pour améliorer votre expérience. Vous pouvez les accepter ou les refuser via les paramètres de votre navigateur.</p>
-
-  <h2>7. Modifications</h2>
-  <p>Cette politique peut être modifiée à tout moment. La version la plus récente sera toujours disponible sur cette page.</p>
-
-  <p><strong>Date de dernière mise à jour :</strong> 9 juin 2025</p>
-
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Go Pharma – Tous droits réservés</p>
+  <section id="accueil" class="hero">
+    <div class="hero-text">
+      <h1>Livraison express de médicaments dès <span>500 FCFA</span></h1>
+      <p>Besoin d’un traitement ? Cliquez, commandez, soyez livré. C’est tout.</p>
+      <a href="https://tally.so/r/nWk4GJ" target="_blank" class="btn-hero">🚀 Commander </a>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Politique de Confidentialité -->
+  <main class="privacy-policy" data-aos="fade-up">
+    <h1>Politique de Confidentialité</h1>
+    <p style="text-align:center; font-style:italic; margin-bottom:30px;">Go Pharma - Dernière mise à jour : [date]</p>
+
+    <section>
+      <h2>Article 1 – Collecte des données personnelles</h2>
+      <p>Nous collectons uniquement les données nécessaires à la fourniture et à l’amélioration de nos services, notamment :</p>
+      <ul>
+        <li>Nom, prénom</li>
+        <li>Adresse e-mail</li>
+        <li>Numéro de téléphone</li>
+        <li>Adresse postale (si nécessaire)</li>
+        <li>Informations relatives aux commandes et paiements</li>
+        <li>Données de navigation sur notre site (cookies, adresses IP)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Article 2 – Utilisation des données</h2>
+      <p>Les données collectées sont utilisées pour :</p>
+      <ul>
+        <li>Gérer les commandes et livraisons</li>
+        <li>Communiquer avec les utilisateurs (support, offres, notifications)</li>
+        <li>Améliorer nos services et personnaliser l’expérience utilisateur</li>
+        <li>Respecter les obligations légales et fiscales</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Article 3 – Partage des données</h2>
+      <p>Nous ne vendons, n’échangeons ni ne louons vos données personnelles à des tiers. Les données peuvent être partagées uniquement avec :</p>
+      <ul>
+        <li>Nos partenaires de confiance (ex : prestataires logistiques, services de paiement) strictement dans le cadre de l’exécution du service</li>
+        <li>Les autorités compétentes en cas d’obligation légale</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Article 4 – Cookies et technologies similaires</h2>
+      <p>Nous utilisons des cookies pour améliorer la navigation, analyser le trafic et personnaliser les contenus. Vous pouvez gérer vos préférences en matière de cookies via les paramètres de votre navigateur.</p>
+    </section>
+
+    <section>
+      <h2>Article 5 – Sécurité des données</h2>
+      <p>Go Pharma met en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données contre toute perte, altération, accès non autorisé ou divulgation.</p>
+    </section>
+
+    <section>
+      <h2>Article 6 – Durée de conservation</h2>
+      <p>Vos données sont conservées uniquement le temps nécessaire à la réalisation des finalités pour lesquelles elles ont été collectées, ou selon les délais légaux applicables.</p>
+    </section>
+
+    <section>
+      <h2>Article 7 – Droits des utilisateurs</h2>
+      <p>Conformément à la réglementation sur la protection des données RGPD, vous disposez :</p>
+      <ul>
+        <li>Du droit d’accès, de rectification et de suppression de vos données</li>
+        <li>Du droit de limiter ou de vous opposer au traitement de vos données</li>
+        <li>Du droit à la portabilité de vos données</li>
+        <li>Du droit de retirer votre consentement à tout moment</li>
+        <li>Du droit d’introduire une réclamation auprès d’une autorité de contrôle</li>
+      </ul>
+      <p>Pour exercer vos droits, contactez-nous à : <a href="mailto:contact@gopharma.com">contact@gopharma.com</a></p>
+    </section>
+
+    <section>
+      <h2>Article 8 – Modifications de la politique de confidentialité</h2>
+      <p>Nous nous réservons le droit de modifier cette politique à tout moment. Toute modification sera publiée sur cette page avec une date de mise à jour.</p>
+    </section>
+
+    <section>
+      <h2>Article 9 – Contact</h2>
+      <p>Pour toute question relative à la confidentialité et à la protection de vos données, veuillez nous contacter à :</p>
+      <p>
+        Go Pharma<br />
+        Email : <a href="mailto:contact@gopharma.com">contact@gopharma.com</a><br />
+        Téléphone : 
+        +229 01 67 71 63 96 <br>+229 01 62 62 08 04
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Go Pharma. Tous droits réservés.
+  </footer>
+
+  <script>
+    // Script pour menu burger responsive
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+    }
+    AOS.init();
+  </script>
 </body>
+
 </html>
+
