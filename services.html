@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | Go Pharma</title>
+  <link rel="icon" type="image/png" href="lager-removebg-preview.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #1a1a1a;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav a, .btn-whatsapp {
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    nav a {
+      color: #000;
+    }
+
+    nav a:hover {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #007f3f;
+      font-weight: 700;
+    }
+
+    .service-list {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .service-box {
+      padding: 25px;
+      border-left: 6px solid #25D366;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    .service-box h3 {
+      margin-top: 0;
+      color: #25D366;
+    }
+
+    .service-box p {
+      margin-bottom: 0;
+    }
+
+    .service-banner {
+      width: 100%;
+      max-width: 1000px;
+      display: block;
+      margin: 30px auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .testimonial-section {
+      background: #f1fff4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .testimonial {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial strong {
+      color: #25D366;
+    }
+
+    .btn-order {
+      display: inline-block;
+      background: linear-gradient(135deg, #007f3f, #25D366);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      margin: 60px auto 0;
+      display: block;
+      width: fit-content;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-order:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #25D366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      font-size: 28px;
+      z-index: 9999;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="lager-removebg-preview.png" alt="Go Pharma logo">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="https://forms.gle/MZJopp6t41XfJJz18" target="_blank">Commander</a>
+      <a href="services.html">Services</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn-whatsapp"
+        onclick="window.open('https://wa.me/22962620804?text=Bonjour%20Go%20Pharma,%20je%20souhaite%20une%20consultation%20gratuite.', '_blank')">
+        Consultation gratuite
+      </button>
+    </nav>
+  </header>
+
+  <section id="services" style="padding: 80px 20px; background: #ffffff;">
+    <h2 class="section-title" data-aos="fade-up">✅ Nos Services</h2>
+    <div class="service-list">
+      <div class="service-box" data-aos="fade-up">
+        <h3>Commande de Médicaments</h3>
+        <p>Commandez vos traitements directement en ligne, avec ou sans ordonnance.</p>
+      </div>
+      <img src="livroo.png" class="service-banner" alt="Commande de Médicaments">
+
+      <div class="service-box" data-aos="fade-up">
+        <h3>Téléversement d'Ordonnance</h3>
+        <p>Ajoutez facilement votre ordonnance pour recevoir exactement ce qu'il vous faut.</p>
+      </div>
+      <img src="retro.png" class="service-banner" alt="Téléversement d'Ordonnance">
+
+      <div class="service-box" data-aos="fade-up">
+        <h3>Livraison Rapide</h3>
+        <p>Nous livrons dans tous les quartiers, rapidement et discrètement.</p>
+      </div>
+      <img src="images/service3.jpg" class="service-banner" alt="Livraison Rapide">
+
+      <div class="service-box" data-aos="fade-up">
+        <h3>Produits de Parapharmacie</h3>
+        <p>Beauté, hygiène, vitamines, bébé... tout est disponible !</p>
+      </div>
+      <img src="Pharmacien et cliente dans une pharmacie.png" class="service-banner" alt="Produits de Parapharmacie">
+
+      <div class="service-box" data-aos="fade-up">
+        <h3>Consultation Gratuite</h3>
+        <p>Besoin de conseil ? Contactez-nous gratuitement par WhatsApp.</p>
+      </div>
+      <img src="Pharmacie GO PHARMA en Afrique (3).png" class="service-banner" alt="Consultation Gratuite">
+
+      <div class="service-box" data-aos="fade-up">
+        <h3>Support 7j/7</h3>
+        <p>Nous répondons rapidement à toutes vos questions, tous les jours.</p>
+      </div>
+      <img src="LIVRAISON SUNDAY.png" class="service-banner" alt="Support 7j/7">
+    </div>
+    <a href="https://forms.gle/MZJopp6t41XfJJz18" target="_blank" class="btn-order">Passer une commande maintenant</a>
+  </section>
+
+  <section class="testimonial-section">
+    <h2 class="section-title" data-aos="fade-up">Ce que disent nos clients</h2>
+    <div class="testimonial" data-aos="fade-up">
+      <p><strong>Fatou S. :</strong> "Service très rapide, j’ai reçu mes médicaments en 30 minutes seulement !"</p>
+    </div>
+    <div class="testimonial" data-aos="fade-up">
+      <p><strong>Yannick D. :</strong> "Le système d’ordonnance en ligne est super pratique. Bravo à l’équipe !"</p>
+    </div>
+    <div class="testimonial" data-aos="fade-up">
+      <p><strong>Chantal K. :</strong> "J’ai adoré le suivi client. Très pro et réactif. Merci Go Pharma !"</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Go Pharma - Tous droits réservés.
+  </footer>
+
+  <a href="https://wa.me/22962620804?text=Bonjour%20Go%20Pharma" class="whatsapp-float" target="_blank">💬</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
